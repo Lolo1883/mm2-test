@@ -1,0 +1,54 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: mirrormaker2-cluster-offsets
+  namespace: kafka
+  labels:
+    strimzi.io/cluster: kafka-cluster-b
+spec:
+  partitions: 1
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: mirrormaker2-cluster-configs
+  namespace: kafka
+  labels:
+    strimzi.io/cluster: kafka-cluster-b
+spec:
+  partitions: 1
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: mirrormaker2-cluster-status
+  namespace: kafka
+  labels:
+    strimzi.io/cluster: kafka-cluster-b
+spec:
+  partitions: 1
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: mm2-offset-syncs.target.internal
+  namespace: kafka
+  labels:
+    strimzi.io/cluster: kafka-cluster-b
+spec:
+  partitions: 1
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: mm2-checkpoints.target.internal
+  namespace: kafka
+  labels:
+    strimzi.io/cluster: kafka-cluster-b
+spec:
+  partitions: 1
+  replicas: 1
